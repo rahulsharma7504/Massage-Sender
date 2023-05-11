@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 90vh;
+            text-align: center;
+            background: #301c3d;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        h1 {
+            /* position: absolute; */
+            left: 4.5vw;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            box-sizing: border-box;
+            font-size: 2vw;
+            display: inline-block;
+            transition-duration: 2s;
+            animation: anim 2s infinite alternate;
+        }
+
+        input {
+            font-family: "Montserrat", sans-serif;
+            padding: 0.3rem;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        button {
+            font-size: 1rem;
+            outline: none;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #fff;
+        }
+
+        @keyframes anim {
+            0% {
+                border: 2px solid blue;
+                background: linear-gradient(to right, blue, green, yellow);
+                text-decoration: double;
+
+            }
+
+            50% {
+                border: 2px solid green;
+                background: linear-gradient(to left, pink, rgb(223, 10, 223), purple);
+            }
+
+            100% {
+
+                border: 2px solid rgb(79, 47, 105);
+                text-shadow: 2px 4px 5px 5px burlywood;
+                background: linear-gradient(to left, pink, rgb(223, 10, 223), purple);
+
+            }
+        }
+
+        .target {
+            position: relative;
+            left: 8px;
+           
+            height: 2vw;
+
+        }
+
+        #decorate {
+            box-sizing: border-box;
+            box-shadow: 2px 3px 4px 9px rgb(23, 3, 26);
+            background:linear-gradient(to bottom ,rgb(84, 163, 199), rgb(53, 150, 118), rgb(176, 68, 185));
+            width: 25vw;
+            height: 29vw;
+            border: 2px solid rgb(98, 222, 253);
+            border-radius: 33px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="decorate">
+        <h1> Write a message </h1><br><br>
+        <input type="text" id="value"><br><br>
+        <button type="button" id="sub"> Submit</button><br><br>
+        <div class="target"><b>Hello</div>
+    </div>
+    <script>
+        document.getElementById('sub').addEventListener('click', sub);
+        function sub() {
+            var tar = document.getElementById('value').value;
+            var get = document.querySelector('.target').innerHTML = tar + ' :: ' + ' Your Message is delivered';
+
+        }
+
+    </script>
+
+
+
+
+</body>
+
+</html>
